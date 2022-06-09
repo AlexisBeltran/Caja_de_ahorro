@@ -3,6 +3,8 @@ import {useNavigate} from 'react-router-dom'
 import { collection,addDoc } from 'firebase/firestore'
 import { db } from '../Firebase'
 import { async } from '@firebase/util'
+import Header from './Header'
+import Footer from './Footer'
 
 const CrearUsuario = () => {
 
@@ -45,14 +47,15 @@ const CrearUsuario = () => {
 
 
   return (
-    <div className='container'>
+    <>
+        <Header></Header>
+        <div className='container'>
         <div className='row'>
             <div className='col'>
                 <h1>Agregar Usuarios</h1>
                 <form onSubmit={store} >
-
-                    <div className='mb-3'>
-                        <label className='form-label'>Nombre</label>
+                    <div className='mb-3 formAddUser'>
+                        <label className=''>Nombre</label>
                         <input value={nombre}
                         onChange={(e) => setnombre(e.target.value)}
                         
@@ -61,8 +64,8 @@ const CrearUsuario = () => {
                         />
                     </div>
 
-                    <div className='mb-3'>
-                        <label className='form-label'>Apellidos</label>
+                    <div className='mb-3 formAddUser'>
+                        <label className=''>Apellidos</label>
                         <input value={apellidos}
                         onChange={(e) => setapellidos(e.target.value)}
                         type="text"
@@ -70,8 +73,8 @@ const CrearUsuario = () => {
                         />
                     </div>
 
-                    <div className='mb-3'>
-                        <label className='form-label'>Direccion</label>
+                    <div className='mb-3 formAddUser'>
+                        <label className=''>Direccion</label>
                         <input value={direccion}
                         onChange={(e) => setdireccion(e.target.value)}
                         type="text"
@@ -79,8 +82,8 @@ const CrearUsuario = () => {
                         />
                     </div>
 
-                    <div className='mb-3'>
-                        <label className='form-label'>Teléfono</label>
+                    <div className='mb-3 formAddUser'>
+                        <label className=''>Teléfono</label>
                         <input value={telefono}
                         onChange={(e) => settelefono(e.target.value)}
                         type="number"
@@ -88,8 +91,8 @@ const CrearUsuario = () => {
                         />
                     </div>
 
-                    <div className='mb-3'>
-                        <label className='form-label'>Correo</label>
+                    <div className='mb-3 formAddUser'>
+                        <label className=''>Correo</label>
                         <input value={correo}
                         onChange={(e) => setcorreo(e.target.value)}
                         type="text"
@@ -214,21 +217,23 @@ const CrearUsuario = () => {
                       />
                   </div>
                   
-                    <div className='d-grid gap-2'>
-                        
-                    <button type='submit' className='btn btn-primary'>Guardar</button>
-
+                    <div className='formStyle'>     
+                        <button type='submit' className='btn btn-primary'>Guardar</button>
+                        <button className='btn btn-danger' onClick={cancelar}>Cancelar</button>
                     </div>
                     
                     
                 </form>
                 <div className='d-grid gap-2 mt-2'>
-              <button className='btn btn-danger' onClick={cancelar}>Cancelar</button>
+              
             </div>
                 
             </div>
         </div>
-    </div>
+        </div>
+        <Footer></Footer>
+    </>
+    
   )
 }
 

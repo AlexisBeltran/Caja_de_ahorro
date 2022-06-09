@@ -27,14 +27,27 @@ const Login = () => {
     }
   }
   return (
-    <div style={{background: '#75c7ff', height: '100vh', display:'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <div style={{background: '#323539', height: '100vh', display:'flex', justifyContent: 'center', alignItems: 'center'}}>
       <div style={{background: '#FFF', borderRadius: '6px', padding: '10px', boxShadow: '3px 0px 5px -1px rgba(0,0,0,0.34)', width: '30rem'}}>
         <h1 style={{margin:0, textAlign:'center', padding: '15px', textTransform: 'uppercase'}}>Caja de ahorro</h1>
         {error ?  <h4 style={{textAlign:'center', background: 'red', padding:'10px', borderRadius: '6px', border: '2px solid #44e0e', color: "#FFF"}}>{error}</h4> : null}
         <form style={{display: 'flex', flexDirection: 'column', gap: '10px'}} onSubmit={(e) => iniciarSesion(e)}>
-          <input placeholder='Correo electronico' className="input" onChange={(e) => setCorreo(e.target.value)} value={correo}/>
-          <input placeholder="Contraseña" className="input" type='password' onChange={(e) => setContrasena(e.target.value)} value={contrasena}/>
-          <button id="initSession" type="sumit" className='btn btn-primary' >Iniciar Sesion</button>
+          <input 
+            placeholder='Correo electronico' 
+            className="input" 
+            onChange={(e) => setCorreo(e.target.value)} 
+            value={correo}
+            style={{border:'none', padding:'10px', boxShadow: "0px 0px 5px rgb(0 0 0 / 50%)", borderRadius: '6px', outline: 'none'}}
+          />
+          <input 
+            placeholder="Contraseña" 
+            className="input" 
+            type='password' 
+            onChange={(e) => setContrasena(e.target.value)} 
+            value={contrasena}
+            style={{border:'none', padding:'10px', boxShadow: "0px 0px 5px rgb(0 0 0 / 50%)", borderRadius: '6px', outline: 'none'}}
+          />
+          <button id="initSession" type="sumit" className='btn'  style={{background: '#323539', color: '#FFF', textTransform: 'uppercase'}}>Iniciar Sesion</button>
         </form>
       </div>
     </div>

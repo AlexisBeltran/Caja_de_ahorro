@@ -12,3 +12,25 @@ code {
     monospace;
 }
 
+
+.formAddUser{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.formAddUser input{
+  width: 15rem;
+}
+.formStyle{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.formStyle > button{
+  padding: .5rem;
+  width: 10rem;
+}
+.gridForm{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

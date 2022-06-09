@@ -9,7 +9,7 @@ import Ahorro from './components/Ahorro';
 import Prestamo from './components/Prestamo';
 import Ahorradores from './components/Ahorradores';
 import Deudores from './components/Deudores';
-
+import Header from './components/Header';
 //Importacion de Router
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 
@@ -22,8 +22,7 @@ function App() {
 
 
   return (
-    <div className="App">
-     
+    <div className="App" style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100vh'}}>
      <BrowserRouter>
      <Routes>
        <Route path='/' element={<Login/>}/>

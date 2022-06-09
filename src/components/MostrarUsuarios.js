@@ -6,12 +6,10 @@ import { db } from '../Firebase'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { async } from '@firebase/util'
-
+import Header from './Header'
+import Footer from './Footer'
 const MySwal = withReactContent(Swal)
-
-
 const MostrarUsuarios = () => {
-
   //Configuracion de los hooks
   const [usuarios,setusuario] = useState([]);
 
@@ -78,20 +76,24 @@ const MostrarUsuarios = () => {
 
   return (
     <>
+    <Header></Header>
     <div className='container'>
       <div className='row'>
         <div className='col'>
-          <div className='d-grid gap-2'>
-            <Link to="/crearusuario" className='btn btn-secondary mt-2 mb-2'>Agregar Nuevo Usuario</Link>
-          </div>
+          <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', gap: '3rem'}}>
+            <div className='d-grid gap-2'>
+              <Link to="/crearusuario" className='btn btn-secondary mt-2 mb-2'>Agregar Nuevo Usuario</Link>
+            </div>
 
-          <div className='d-grid gap-2'>
-            <Link to="/ahorradores" className='btn btn-secondary mt-2 mb-2'>Ver Usuarios Ahorradores</Link>
-          </div>
+            <div className='d-grid gap-2'>
+              <Link to="/ahorradores" className='btn btn-secondary mt-2 mb-2'>Ver Usuarios Ahorradores</Link>
+            </div>
 
-          <div className='d-grid gap-2'>
-            <Link to="/deudores" className='btn btn-secondary mt-2 mb-2'>Ver Usuarios Deudores</Link>
+            <div className='d-grid gap-2'>
+              <Link to="/deudores" className='btn btn-secondary mt-2 mb-2'>Ver Usuarios Deudores</Link>
+            </div>
           </div>
+          
 
             <table className='table table-dark table-hover'>
               <thead>
@@ -127,6 +129,7 @@ const MostrarUsuarios = () => {
         </div>
       </div>
     </div>
+    <Footer></Footer>
     </>
   )
 }
